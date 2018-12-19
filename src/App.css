@@ -6,3 +6,10 @@
   right: 0;
   margin: auto;
 }
+
+footer{
+  position: absolute;
+  bottom: 0px;
+  color: gray;
+  font-style: italic;
+}

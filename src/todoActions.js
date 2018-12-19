@@ -12,3 +12,8 @@ export const undoTodo = id => ({
   type: "UNDO_TODO",
   id
 })
+
+export const deleteTodo = id => ({
+  type: "DELETE_TODO",
+  id
+})

@@ -16,6 +16,11 @@ class App extends Component {
           <Summary />
           <AddTodo />
           <TodoListContainer />
+
+          <p>
+            <br />
+          </p>
+          <footer>Source code can be found on <a href="https://github.com/gummangummangumman/nerdschool-react-solution">github</a></footer>
       </div>
     );
   }

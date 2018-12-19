@@ -8,29 +8,34 @@ const todosReducer = (todos = defaultTodos, action) => {
   switch (action.type) {
     case "CREATE_TODO":
       return [...todos,
-        new Todo((todos.length + 1), action.description, false)];
+        new Todo(Math.floor(Math.random() * 9999999999), action.description, false)];
 
     case "DO_TODO":
-      let newArray = todos;
-      for(let i=0;i<newArray.length;i++){
-        if(newArray[i].id==action.id){
-          console.log("found match ");
-          newArray[i].done = true;
+      let doArray = todos;
+      for(let i=0;i<doArray.length;i++){
+        if(doArray[i].id==action.id){
+          doArray[i].done = true;
         }
       }
-    console.log("do todo " + action.id);
-      return [...newArray];
+      return [...doArray];
 
     case "UNDO_TODO":
-    let nuArray = todos;
-    nuArray.forEach(t => {
+    let undoArray = todos;
+    undoArray.forEach(t => {
       if(t.id==action.id){
-        console.log("found match");
         t.done = false;
       }
     });
-    console.log("undo todo " + action.id);
-      return [...nuArray];
+      return [...undoArray];
+
+      case "DELETE_TODO":
+      let deleteArray = todos;
+      for (var i = deleteArray.length; i--;) {
+        if (deleteArray[i].id === action.id) {
+            deleteArray.splice(i, 1);
+        }
+      }
+      return [...deleteArray];
 
     default:
       return todos;

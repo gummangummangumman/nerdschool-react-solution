@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { doTodo, undoTodo } from "./todoActions";
+import { doTodo, undoTodo, deleteTodo } from "./todoActions";
 
 import './todoItem.css';
 
@@ -20,19 +20,11 @@ class TodoItem extends Component{
     return <div className="todo-item__container">
       <input type="checkbox" id={`todoItemCheckbox-${this.props.id}`} onClick={() => this.check()} />
       <label htmlFor={`todoItemCheckbox-${this.props.id}`}>{this.props.description}</label>
-      <input type="button" value="Delete" className="deleteButton" />
+      <input type="button" value="Delete" className="deleteButton" onClick={() => this.props.deleteTodoItem(this.props.id)} />
     </div>
   }
 }
 
-/*
-const TodoItem = ({ id,description }) => (
-  <div className="todo-item__container">
-    <input type="checkbox" id={`todoItemCheckbox-${id}`} onClick={() => check(id)} />
-    <label htmlFor={`todoItemCheckbox-${id}`}>{description}</label>
-    <input type="button" value="Delete" className="deleteButton" />
-  </div>
-);*/
 
 TodoItem.propTypes = {
   description: PropTypes.string.isRequired,
@@ -41,7 +33,8 @@ TodoItem.propTypes = {
 
 const mapDispatchToProps = dispatch => ({
   doTodoItem: id => dispatch(doTodo(id)),
-  undoTodoItem: id => dispatch(undoTodo(id))
+  undoTodoItem: id => dispatch(undoTodo(id)),
+  deleteTodoItem: id => dispatch(deleteTodo(id))
 });
 
 export default connect(null, mapDispatchToProps) (TodoItem);
