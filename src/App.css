@@ -8,6 +8,9 @@
 }
 
 footer{
+  border-top: solid;
+  width: 100%;
+  padding-top: 10px;
   position: absolute;
   bottom: 0px;
   color: gray;

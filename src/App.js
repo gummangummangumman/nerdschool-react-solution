@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-          <h1>My Todo App</h1>
+          <h1>Todo List</h1>
           <Summary />
           <AddTodo />
           <TodoListContainer />
@@ -20,7 +20,11 @@ class App extends Component {
           <p>
             <br />
           </p>
-          <footer>Source code can be found on <a href="https://github.com/gummangummangumman/nerdschool-react-solution">github</a></footer>
+          <p>
+            <br />
+          </p>
+          <footer>Made as an introduction to React and Redux. Source code can be found over at <a href="https://github.com/gummangummangumman/nerdschool-react-solution">github</a>
+          </footer>
       </div>
     );
   }

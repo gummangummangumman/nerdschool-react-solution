@@ -15,12 +15,20 @@ class AddTodo extends Component{
       document.getElementById("descriptionInput").value = "";
   }
 
+  handleEnter(event){
+    if(event.keyCode===13){
+      this.addItem();
+    }
+  }
+
   render()
   {
     return (
-      <div>
-        <input type="text" id="descriptionInput" />
-        <button onClick={() => this.addItem()}>Add</button>
+      <div className="input-group">
+        <input className="form-control" type="text" id="descriptionInput" onKeyDown={(event) => this.handleEnter(event)} />
+        <div className="input-group-btn">
+          <button className="form-control  btn-success" id="addButton" onClick={() => this.addItem()}>Add</button>
+        </div>
       </div>
   );
   }

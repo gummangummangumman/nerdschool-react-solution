@@ -20,7 +20,7 @@ class TodoItem extends Component{
     return <div className="todo-item__container">
       <input type="checkbox" id={`todoItemCheckbox-${this.props.id}`} onClick={() => this.check()} />
       <label htmlFor={`todoItemCheckbox-${this.props.id}`}>{this.props.description}</label>
-      <input type="button" value="Delete" className="deleteButton" onClick={() => this.props.deleteTodoItem(this.props.id)} />
+      <input type="button" value="Delete" className="btn btn-danger" onClick={() => this.props.deleteTodoItem(this.props.id)} />
     </div>
   }
 }
