@@ -4,10 +4,8 @@ import './App.css';
 import Summary from "./Summary";
 import AddTodo from "./AddTodo";
 import TodoListContainer from "./TodoListContainer";
-import Todo from "./Todo";
 
 class App extends Component {
-
 
   render() {
     return (

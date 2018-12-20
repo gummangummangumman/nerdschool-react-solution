@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { createTodo } from "./todoActions";
 
-
-
-
-
 class AddTodo extends Component{
 
   addItem(){
       let description = document.getElementById("descriptionInput").value;
-      if(description != "")
+      if(description !== "")
         this.props.createTodoItem(description);
       document.getElementById("descriptionInput").value = "";
   }

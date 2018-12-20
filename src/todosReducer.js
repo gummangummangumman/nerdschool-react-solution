@@ -13,7 +13,7 @@ const todosReducer = (todos = defaultTodos, action) => {
     case "DO_TODO":
       let doArray = todos;
       for(let i=0;i<doArray.length;i++){
-        if(doArray[i].id==action.id){
+        if(doArray[i].id===action.id){
           doArray[i].done = true;
         }
       }
@@ -22,7 +22,7 @@ const todosReducer = (todos = defaultTodos, action) => {
     case "UNDO_TODO":
     let undoArray = todos;
     undoArray.forEach(t => {
-      if(t.id==action.id){
+      if(t.id===action.id){
         t.done = false;
       }
     });
